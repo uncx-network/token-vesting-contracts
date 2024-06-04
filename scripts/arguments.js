@@ -1,0 +1,13 @@
+// dont delete this file its needed for manual verification
+
+module.exports = [
+  // "0xDffCa4B8c6DEfB2FC0fbc0a1B07D4ba34a2c1453",
+  // "0x12a51944e8349B8e70Ed8e2d9BFbc88Adb4A8F4E",
+  // "0x04bDa42de3bc32Abb00df46004204424d4Cf8287",
+  // "0x12a51944e8349B8e70Ed8e2d9BFbc88Adb4A8F4E"
+
+  // "0x7f5C649856F900d15C83741f45AE46f5C6858234",
+  // "0xFD235968e65B0990584585763f837A5b5330e6DE"
+
+  "0x1fe6cC287feB08ce831dF0cd114341480ADCaA5A"
+];
