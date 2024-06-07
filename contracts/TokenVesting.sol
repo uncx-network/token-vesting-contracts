@@ -113,7 +113,7 @@ contract TokenVesting is Ownable, ReentrancyGuard {
   
   FeeStruct public FEES;
   
-  IUnicryptAdmin UNCX_ADMINS;
+  IUnicryptAdmin public UNCX_ADMINS;
   IMigrator public MIGRATOR;
   ITokenBlacklist public BLACKLIST; // prevent AMM tokens with a blacklisting contract
 

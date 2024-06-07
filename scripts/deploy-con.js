@@ -17,19 +17,19 @@ async function main() {
 
   const UAdminContract = await hre.ethers.getContractFactory("UnicryptAdmin");
   const UNI_ADMIN = await UAdminContract.deploy();
-  await UNI_ADMIN.deployed();
+  await UNI_ADMIN.waitForDeployment();
 
   const TokenVestingContract = await hre.ethers.getContractFactory("TokenVesting");
-  const TOKEN_VESTING = await TokenVestingContract.deploy(UNI_ADMIN.address);
-  await TOKEN_VESTING.deployed();
+  const TOKEN_VESTING = await TokenVestingContract.deploy(UNI_ADMIN.target);
+  await TOKEN_VESTING.waitForDeployment();
 
   const TokenVestingPager = await hre.ethers.getContractFactory("TokenVestingPager");
-  const TOKEN_VESTING_PAGER = await TokenVestingPager.deploy(TOKEN_VESTING.address);
-  await TOKEN_VESTING_PAGER.deployed();
+  const TOKEN_VESTING_PAGER = await TokenVestingPager.deploy(TOKEN_VESTING.target);
+  await TOKEN_VESTING_PAGER.waitForDeployment();
 
-  console.log("Unicrypt Admin:", UNI_ADMIN.address);
-  console.log("Token Vesting:", TOKEN_VESTING.address);
-  console.log("Pager:", TOKEN_VESTING_PAGER.address);
+  console.log("Unicrypt Admin:", UNI_ADMIN.target);
+  console.log("Token Vesting:", TOKEN_VESTING.target);
+  console.log("Pager:", TOKEN_VESTING_PAGER.target);
   console.log("Done");
 
   var secondsToSleep = 10
@@ -39,9 +39,9 @@ async function main() {
   }
 
   await hre.run("verify:verify", {
-    address: TOKEN_VESTING.address,
+    address: TOKEN_VESTING.target,
     constructorArguments: [
-      UNI_ADMIN.address
+      UNI_ADMIN.target
     ],
   });
 

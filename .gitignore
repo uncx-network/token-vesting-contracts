@@ -12,3 +12,6 @@ artifacts
 # Mac files
 .DS_Store
 
+# Flattened files for verification
+flattened.sol
+
